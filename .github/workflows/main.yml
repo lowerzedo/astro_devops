@@ -58,7 +58,7 @@ jobs:
         run: terraform plan -out "plan.out"
 
       - name: Terraform Apply
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'false'
+        if: github.event.inputs.destroy == 'false'
         env:
           TF_VAR_vpc_cidr: ${{ secrets.TF_VAR_VPC_CIDR }}
           TF_VAR_public_subnet_cidrs: ${{ secrets.TF_VAR_PUBLIC_SUBNET_CIDRS }}
