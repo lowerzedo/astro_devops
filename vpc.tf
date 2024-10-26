@@ -40,13 +40,13 @@ resource "aws_subnet" "private" {
 }
 
 resource "aws_eip" "nat_eip" {
-  count = length(var.availability_zones)
-  network_interface = true
+  for_each = var.availability_zones
+  network_border_group = "ap-southeast-1"
 }
 
 resource "aws_nat_gateway" "nat" {
   for_each       = aws_subnet.public
-  allocation_id  = element(aws_eip.nat_eip[*].id, index(aws_subnet.public, each.key))
+  allocation_id  = aws_eip.nat_eip[each.key].id
   subnet_id      = each.value.id
 
   tags = {
