@@ -1,5 +1,6 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources"
+  default = "ap-southeast-1"
 }
 
 variable "vpc_cidr" {
