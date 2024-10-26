@@ -28,7 +28,7 @@ variable "instance_type" {
 
 variable "ami_id" {
   description = "AMI ID for EC2 instances"
-  default = "ami-0c41c61cff399154c" # Ubuntu free tier in malaysia region
+  default = "ami-047126e50991d067b" # Ubuntu free tier in sg region
   
 }
 
