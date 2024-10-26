@@ -40,8 +40,7 @@ resource "aws_subnet" "private" {
 }
 
 resource "aws_eip" "nat_eip" {
-  for_each = var.availability_zones
-  network_border_group = "ap-southeast-1"
+  for_each = zipmap(var.availability_zones, var.availability_zones)
 }
 
 resource "aws_nat_gateway" "nat" {
