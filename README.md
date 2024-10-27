@@ -1,0 +1,1 @@
+![Architecture diagram](image.png)
