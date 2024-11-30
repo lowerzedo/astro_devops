@@ -21,10 +21,10 @@ resource "aws_lb_target_group" "web_tg" {
     path                = "/"
     protocol            = "HTTP"
     matcher             = "200"
-    interval            = 30
-    timeout             = 5
-    healthy_threshold   = 5
-    unhealthy_threshold = 2
+    interval            = 30 # every 30 seconds
+    timeout             = 5 # wait 5 seconds before timing out
+    healthy_threshold   = 5 # mark as healthy after 5 successful checks
+    unhealthy_threshold = 2 # mark as unhealthy after 2 failed checks
   }
 
   tags = {

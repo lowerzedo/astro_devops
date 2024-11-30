@@ -14,4 +14,4 @@ CloudWatch & SNS: For monitoring and alerts.
 
 # Architecture diagram
 
-![Architecture diagram](arch_diagram.png)
+![Architecture diagram](arch_diagram.jpg)

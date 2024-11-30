@@ -23,7 +23,7 @@ resource "aws_security_group" "web_sg" {
     description = "Allow all outbound"
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
+    protocol    = "-1" # all protocols
     cidr_blocks = ["0.0.0.0/0"]
   }
 
